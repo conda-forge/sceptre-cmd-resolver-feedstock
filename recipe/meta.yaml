@@ -1,5 +1,5 @@
 {% set name = "sceptre-cmd-resolver" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sceptre-cmd-resolver-{{ version }}.tar.gz
-  sha256: b748f5023a4f84be6e34439dea4be53f641e3b474640ab9584f0eeb07ebc2f1c
+  sha256: ff83298ae86a51df150de28cd17c3754c64aad2bc7813c3095cc5cfc7fad89f1
 
 build:
   number: 0
