@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sceptre-cmd-resolver-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sceptre-cmd-resolver-{{ version }}.tar.gz
   sha256: b748f5023a4f84be6e34439dea4be53f641e3b474640ab9584f0eeb07ebc2f1c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,10 +19,10 @@ requirements:
   host:
     - pip
     - pytest-runner >=3
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - packaging ==16.8
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Sceptre/sceptre-resolver-cmd
